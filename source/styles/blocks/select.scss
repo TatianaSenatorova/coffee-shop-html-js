@@ -1,0 +1,113 @@
+.select {
+  position: relative;
+  display: flex;
+  align-items: center;
+  font-family: $primary-font;
+  justify-content: space-between;
+  padding-left: 3px;
+}
+
+.select__title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.select select {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+}
+
+.select__button {
+  position: relative;
+  display: flex;
+  max-width: 165px;
+  min-height: 32px;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  font-family: $primary-font;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 4px 27px 4px 9px;
+  color: $color-slate-blue;
+  cursor: pointer;
+  background-color: $color-white-smoke;
+  border-radius: 4px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 7px;
+    width: 10px;
+    height: 6px;
+    background-image: url("../../icons/select-arrow.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  .select--is-opened &::after {
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .select--is-disabled & {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  &:hover {
+    background-color: $color-magnolia;
+  }
+
+  &:focus {
+    background-color: $color-magnolia;
+  }
+
+  &:active {
+    &::after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 4px 30px 4px 9px;
+
+    &::after {
+      right: 10px;
+    }
+  }
+}
+
+.select__list {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: $color-white-smoke;
+  visibility: hidden;
+  opacity: 0;
+
+  .select--is-opened & {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .select--is-disabled & {
+    display: none;
+    pointer-events: none;
+  }
+}

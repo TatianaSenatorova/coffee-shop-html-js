@@ -1,0 +1,81 @@
+.range {
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+
+  &--is-disabled {
+    cursor: none;
+    pointer-events: none;
+  }
+}
+
+.noui-handle {
+  border: 2px solid $color-medium-purple;
+  border-radius: 50%;
+  background-color: $color-white;
+  cursor: pointer;
+
+  &::before {
+    content: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: transparent;
+    transition: background-color 0.3s;
+  }
+
+  &:hover::after {
+    background-color: rgba(120, 89, 207, 0.25);
+  }
+
+  &:focus::after {
+    background-color: rgba(120, 89, 207, 0.25);
+  }
+
+  &:active::after {
+    background-color: $color-slate-blue;
+  }
+
+  .range--is-disabled & {
+    background-color: $color-white-smoke;
+    border-color: $color-silver;
+  }
+}
+
+.noui-horizontal .noui-handle {
+  width: 24px;
+  height: 24px;
+  right: 0;
+  top: -10px;
+}
+
+.noui-handle-upper {
+  right: -12px;
+}
+
+.noui-origin {
+  width: calc(100% - 24px);
+}
+
+.noui-connects {
+  background: linear-gradient(to bottom, transparent 1px, $color-gainsboro 1px, $color-gainsboro 3px, transparent 3px);
+  border: unset;
+}
+
+.noui-connect {
+  background-color: $color-medium-purple;
+  border: unset;
+  height: 4px;
+
+  .range--is-disabled & {
+    background-color: $color-silver;
+  }
+}

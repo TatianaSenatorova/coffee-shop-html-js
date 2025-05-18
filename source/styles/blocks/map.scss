@@ -1,0 +1,10 @@
+.map__wrap-image {
+  background-color: $color-panache;
+}
+
+.map__image {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

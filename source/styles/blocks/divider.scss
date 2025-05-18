@@ -1,0 +1,12 @@
+.divider {
+  width: 100vw;
+  height: 1px;
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 50vw);
+  background-color: $color-magnolia;
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}

@@ -1,0 +1,202 @@
+.slider {
+  position: relative;
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  overflow: hidden;
+  --padding-gradient-tablet: 188px;
+}
+
+.slider__window {
+  max-width: $desktop-width;
+  width: auto;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 0 40px;
+  }
+}
+
+.slider__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  display: flex;
+}
+
+.slider__item {
+  min-width: 100%;
+
+  &--pink {
+    background-color: $color-bridal-heath;
+
+    @media (min-width: $tablet-width) {
+      background-color: unset;
+      background-image: linear-gradient(to top, transparent var(--padding-gradient-tablet), $color-bridal-heath var(--padding-gradient-tablet));
+    }
+
+    @media (min-width: $desktop-width) {
+      background-image: unset;
+      background-color: $color-bridal-heath;
+    }
+  }
+
+  &--lavander {
+    background-color: $color-lavender;
+
+    @media (min-width: $tablet-width) {
+      background-color: unset;
+      background-image: linear-gradient(to top, transparent var(--padding-gradient-tablet), $color-lavender var(--padding-gradient-tablet));
+    }
+
+    @media (min-width: $desktop-width) {
+      background-image: unset;
+      background-color: $color-lavender;
+    }
+  }
+
+  &--grey {
+    background-color: $color-solitude;
+
+    @media (min-width: $tablet-width) {
+      background-color: unset;
+      background-image: linear-gradient(to top, transparent var(--padding-gradient-tablet), $color-solitude var(--padding-gradient-tablet));
+    }
+
+    @media (min-width: $desktop-width) {
+      background-image: unset;
+      background-color: $color-solitude;
+    }
+  }
+}
+
+.slider__button {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 20px;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  color: $color-slate-blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-image 0.3s;
+
+  &:hover {
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, $color-white 100%);
+  }
+
+  &:focus {
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, $color-white 100%);
+  }
+
+  &:active {
+    background: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+  }
+
+  @media (min-width: $tablet-width) {
+    bottom: var(--padding-gradient-tablet);
+    width: 80px;
+  }
+
+  @media (min-width: $desktop-width) {
+    bottom: 0;
+    left: calc(50vw - ($desktop-width / 2));
+  }
+
+  &--next {
+    right: 0;
+    left: unset;
+
+    &:hover {
+      background-image: linear-gradient(90deg, $color-white 0%, transparent 100%);
+    }
+
+    &:focus {
+      background-image: linear-gradient(90deg, $color-white 0%, transparent 100%);
+    }
+
+    &:active {
+      background: linear-gradient(90deg, rgba(120, 89, 207, 0) 0%, rgba(120, 89, 207, 0.25) 100%);
+    }
+
+    @media (min-width: $desktop-width) {
+      right: calc(50vw - ($desktop-width / 2));
+    }
+  }
+}
+
+.slider__button:disabled {
+  color: $color-silver;
+  pointer-events: none;
+}
+
+.slider__button svg {
+  display: block;
+  flex-shrink: 0;
+}
+
+.slider__button--next svg {
+  transform: rotate(180deg);
+}
+
+.prev-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
+}
+
+.slider__pagination-list {
+  display: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @media (min-width: $desktop-width) {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 55px;
+    display: flex;
+    gap: 8px;
+  }
+}
+
+.slider__pagination-button {
+  width: 62px;
+  height: 20px;
+  padding: 0;
+  background-color: unset;
+  background-image: linear-gradient(to bottom, transparent 8px, $color-white 8px, $color-white 12px, transparent 12px);
+  border: none;
+  cursor: pointer;
+  transition: background-image 0.3s;
+  color: transparent;
+
+  &:hover {
+    background-image: linear-gradient(to bottom, transparent 8px, rgba(120, 89, 207, 0.25) 8px, rgba(120, 89, 207, 0.25) 12px, transparent 12px);
+  }
+
+  &:focus {
+    background-image: linear-gradient(to bottom, transparent 8px, rgba(120, 89, 207, 0.25) 8px, rgba(120, 89, 207, 0.25) 12px, transparent 12px);
+  }
+
+  &:active {
+    background-image: linear-gradient(to bottom, transparent 8px, $color-slate-blue 8px, $color-slate-blue 12px, transparent 12px);
+  }
+
+  &--is-current {
+    background-image: linear-gradient(to bottom, transparent 8px, $color-slate-blue 8px, $color-slate-blue 12px, transparent 12px);
+  }
+}

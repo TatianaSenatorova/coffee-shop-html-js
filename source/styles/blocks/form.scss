@@ -1,0 +1,92 @@
+.form {
+  @media (min-width: $tablet-width) {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 9px 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    padding-top: 5px;
+  }
+}
+
+.form__fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 31px;
+
+  @media (min-width: $desktop-width) {
+    &:last-of-type {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.form__legend {
+  font-weight: 600;
+  margin-bottom: 19px;
+  padding: 0;
+  word-wrap: break-word;
+
+  .form__fieldset:has(.range) & {
+    margin-bottom: 29px;
+  }
+}
+
+.form__button {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form__range {
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 17px;
+  }
+}
+
+.form__wrapper-inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.form__inputs-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form__list-item {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form__buttons-wrap {
+  @media (min-width: $tablet-width) {
+    justify-self: center;
+    display: grid;
+    grid-template-columns: 137px 120px;
+    gap: 20px;
+    grid-column: 1 / -1;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 100%;
+    justify-self: flex-start;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}

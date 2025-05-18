@@ -1,0 +1,231 @@
+.catalog {
+  background-color: $color-white-smoke;
+  padding-top: 50px;
+  padding-bottom: 42px;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 79px;
+    padding-bottom: 89px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 99px;
+    padding-bottom: 120px;
+  }
+}
+
+.catalog__all-wrap {
+  max-width: 280px;
+  margin: 0 auto;
+
+  @media (min-width: $tablet-width) {
+    max-width: 728px;
+  }
+
+  @media (min-width: $desktop-width) {
+    max-width: 100%;
+  }
+}
+
+.catalog__content-wrapper {
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-columns: 318px 1fr;
+    column-gap: 30px;
+    padding-top: 15px;
+  }
+}
+
+.catalog__badge {
+  margin: 0 auto;
+  margin-bottom: 5px;
+}
+
+.catalog__title {
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.5;
+  word-wrap: break-word;
+
+  @media (min-width: $tablet-width) {
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.52;
+    margin-bottom: 21px;
+  }
+}
+
+.catalog__form {
+  margin: 0 auto;
+  margin-bottom: 40px;
+  max-width: 390px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 20px;
+    max-width: unset;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+  }
+}
+
+.catalog__list-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.catalog__list {
+  margin: 0 auto;
+  width: 100%;
+  margin-bottom: 40px;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: repeat(auto-fill, minmax(349px, 349px));
+    margin-bottom: 70px;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: repeat(auto-fill, minmax(317px, 317px));
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+}
+
+.catalog__pagination {
+  @media (min-width: $tablet-width) {
+    align-self: flex-end;
+  }
+}
+
+.catalog__pagination-list {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.catalog__pagination-button {
+  width: 40px;
+  min-height: 40px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: $color-white;
+  color: $color-slate-blue;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  font-family: $primary-font;
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 400;
+  cursor: pointer;
+  transition: color 0.3s, background-color 0.3s;
+
+  &:hover {
+    background-color: $color-medium-purple;
+    color: $color-white;
+  }
+
+  &:focus {
+    background-color: $color-medium-purple;
+    color: $color-white;
+  }
+
+  &:active {
+    background-color: $color-royal-purple;
+  }
+
+  &:disabled {
+    background-color: $color-gainsboro;
+    pointer-events: none;
+    color: $color-white;
+  }
+
+  &--is-disabled {
+    background-color: $color-gainsboro;
+    pointer-events: none;
+    color: $color-white;
+  }
+
+  &--is-active {
+    color: $color-night-rider;
+    font-weight: 600;
+    pointer-events: none;
+    background-color: $color-white-smoke;
+  }
+
+
+  @media (min-width: $tablet-width) {
+    &--prev {
+      padding: 8px 20px;
+      width: unset;
+    }
+
+    &--next {
+      padding: 8px 20px;
+      width: unset;
+    }
+  }
+}
+
+.catalog__pagination-info {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
+}
+
+.catalog__pagination-button svg {
+  display: block;
+  color: $color-slate-blue;
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.catalog__pagination-button:disabled svg {
+  color: $color-white;
+}
+
+.catalog__pagination-button--prev svg {
+  transform: rotate(180deg);
+}
+
+.catalog__select {
+  width: 280px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+
+
+  @media (min-width: $tablet-width) {
+    margin: unset;
+    margin-left: auto;
+    width: 285px;
+    margin-bottom: 26px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin-bottom: 26px;
+  }
+}

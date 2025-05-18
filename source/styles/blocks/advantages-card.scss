@@ -1,0 +1,99 @@
+.advantages-card {
+  min-width: 280px;
+  width: 100%;
+  min-height: 142px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-position: top center;
+  background-repeat: no-repeat;
+  padding-top: 66px;
+
+  @media (min-width: $tablet-width) {
+    min-height: unset;
+    align-items: start;
+    padding: 2px 0 0 72px;
+    background-position: top left;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding: 76px 0 0;
+    background-position: top center;
+    align-items: center;
+  }
+
+  &--speed {
+    background-image: url("../../icons/clock.svg");
+    background-size: 50px 56px;
+
+    @media (min-width: $tablet-width) {
+      background-position: 1px 5px;
+    }
+  }
+
+  &--fit {
+    background-image: url("../../icons/pocket.svg");
+    background-size: 52px 56px;
+
+    @media (min-width: $tablet-width) {
+      background-position: 0 1px;
+    }
+  }
+
+  &--energy {
+    background-image: url("../../icons/lightning.svg");
+    background-size: 42px 56px;
+
+    @media (min-width: $tablet-width) {
+      background-position: 5px 1px;
+    }
+  }
+
+  &--ecology {
+    background-image: url("../../icons/leaf.svg");
+    background-size: 46px 56px;
+
+    @media (min-width: $tablet-width) {
+      background-position: 3px 5px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    background-position: top center;
+  }
+}
+
+.advantages-card__title {
+  margin: 0;
+  margin-bottom: 4px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.78;
+  word-wrap: break-word;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 10px;
+    font-size: 24px;
+    line-height: 1.5;
+  }
+}
+
+.advantages-card__description {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.43;
+  word-wrap: break-word;
+
+  @media (min-width: $tablet-width) {
+    text-align: left;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  @media (min-width: $desktop-width) {
+    text-align: center;
+  }
+}

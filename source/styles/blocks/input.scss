@@ -1,0 +1,35 @@
+.input {
+  display: block;
+  text-align: center;
+  width: 118px;
+  outline: none;
+  padding: 6px 10px;
+  border: 2px solid $color-medium-purple;
+  border-radius: 4px;
+  font: inherit;
+  font-weight: 500;
+  color: $color-night-rider;
+  appearance: textfield;
+
+  &::placeholder {
+    color: $color-silver;
+  }
+
+  &:focus {
+    border-color: $color-royal-purple;
+  }
+
+  &:disabled {
+    color: $color-silver;
+    background-color: $color-white-smoke;
+    border-color: $color-gainsboro;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 88px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 134px;
+  }
+}

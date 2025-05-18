@@ -1,0 +1,20 @@
+.page {
+  height: 100%;
+}
+
+.page__body {
+  min-height: 100%;
+  min-width: 320px;
+  margin: 0;
+  font-family: $primary-font;
+  font-size: 16px;
+  line-height: 1.5;
+  background-color: $color-white;
+  color: $color-night-rider;
+  display: flex;
+  flex-direction: column;
+}
+
+.page__body:has(.main-header--nav-is-opened) {
+  overflow: hidden;
+}
