@@ -74,6 +74,7 @@
     "w3c-html-validator": "1.8.1"
   },
   "dependencies": {
+    "gh-pages": "^6.3.0",
     "htmlacademy-gulp-template": "file:"
   }
 }
