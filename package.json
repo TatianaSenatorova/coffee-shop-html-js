@@ -17,7 +17,7 @@
     "start": "gulp runDev",
     "build": "gulp buildProd",
     "preview": "npm run build && browser-sync start -s build/ --cors --no-notify --no-ui",
-    "deploy": "gulp build && gh-pages -d build",
+    "deploy": "gulp buildProd && gh-pages -d build",
     "lint": "npm-run-all -pc lint:**",
     "lint:spaces": "ec --exclude vendor/*",
     "lint:markup": "cd source && html-validator --quiet",
